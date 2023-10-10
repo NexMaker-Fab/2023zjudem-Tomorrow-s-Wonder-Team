@@ -67,12 +67,18 @@
   position: relative;
 }
 .heading {
+  width: 75px;
   color: #1e1e1e;
   text-align: left;
   font: 700 96px/120% "Poppins", sans-serif;
   position: absolute;
   left: 100px;
   top: 78px;
+  background-color: #dfd7a6;
+  margin-bottom: 50px;
+  padding: 30px;
+  border-radius: 30px;
+  
 }
 .intro-paragraph {
   color: #1e1e1e;
@@ -83,6 +89,10 @@
   top: 454px;
   width: 583px;
   height: 110px;
+  margin-top: 50px;
+  margin-bottom: 70px;
+  
+  
 }
 .navigation {
   padding: 24px 42px 24px 42px;
@@ -140,5 +150,13 @@
  position: relative;
   transform: translate(-1444px, -0.5px);
   overflow: visible;
+ }
+
+ a{
+  text-decoration: none;
+ }
+
+ a:hover{
+  background-color: #dfd7a6 ;
  }
 
