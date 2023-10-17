@@ -168,3 +168,13 @@
   align-items: center;
   justify-content: flex-end;
 }
+
+
+.title-left{
+  margin-left: 90px;
+  margin-top: 30px;
+}
+ 
+a{
+  text-decoration: none;
+}

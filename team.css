@@ -14,7 +14,7 @@
 .member-1 {
    display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 10px;
     align-items: flex-start;
     justify-content: flex-start;
     width: 387px;
@@ -29,6 +29,12 @@
    align-self: stretch;
    flex: 1;
     position: relative;
+    width: 400px;
+    height: 250px;
+    /* border-radius: 10px; */
+    padding: 10px 40px 10px 40px;
+    border-left: 0px solid #1e1e1e;
+    border-right: 0px solid #1e1e1e;
    }
 
 .title-description {
@@ -42,6 +48,8 @@
     position: relative;
    }
 
+
+
 .project-title {
    color: var(--black, #2d2d2d);
     text-align: center;
@@ -53,7 +61,7 @@
 .member-2 {
    display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 10px;
     align-items: flex-start;
     justify-content: flex-start;
     width: 386px;
@@ -78,7 +86,7 @@
 .member-3 {
    display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 10px;
     align-items: flex-start;
     justify-content: flex-start;
     width: 387px;
@@ -92,7 +100,7 @@
 .member-4 {
    display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 10px;
     align-items: flex-start;
     justify-content: flex-start;
     width: 387px;
@@ -106,7 +114,7 @@
 .member-5 {
    display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 10px;
     align-items: flex-start;
     justify-content: flex-start;
     width: 386px;
@@ -120,7 +128,7 @@
 .member-6 {
    display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 10px;
     align-items: flex-start;
     justify-content: flex-start;
     width: 387px;
@@ -189,4 +197,17 @@
     display: flex;
    align-items: center;
    justify-content: flex-end}
+
+   a{
+      text-decoration: none;
+   }
+
+   .title-left{
+      margin-left: 90px;
+      margin-top: 30px;
+    }
+
+
+
+
 
