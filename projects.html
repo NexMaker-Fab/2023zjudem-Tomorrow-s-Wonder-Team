@@ -3,13 +3,41 @@
     <head>
         <link href="projects.css" rel="stylesheet" />
         <link rel="stylesheet" type="text/css" href="projects.css">
-        <title>Document</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <title>Projects</title>
     </head>
     <body>
 		<div class="slide-16-9-10" >
+
+			<div class="header-color">
+				
+	
+				<div class="navigation" >
+					
+						<div class="menu-items" >
+							<a href="index.html" class="nav-link projects" >
+							Home
+								</a>
+							<a href="index.html" class="nav-link projects" >
+							Assignments
+							</a>
+							<a href="team.html" class="nav-link members" >
+							Members
+							</a>
+							<a href="final.html" class="nav-link school">
+							Final Project
+							</a>
+						</div>
+						<p class="title-left"><b>ZJU-Design</b> Engineering</p>
+				</div>
+			</div>
+
+			<!-- <div class="container">
+
+			
 			<div class="heading-projects" >
-		Projects </div>
-			<a href="project management.html" class="project-management" >
+		     Projects </div>
+			<a href="PM.html" class="project-management" >
             <b>Project Management</b>
             </a>
 			<div class="paragraph" >
@@ -27,29 +55,104 @@
 			<a href="Final Project.html" class="final-project" >
 		    <b>Final Project</b> 
             </a>
+		</div> -->
+
+		<div class="heading-projects" >
+			Class Assignments </div>
+		<div class="row">
+			<div class="menu-1 col-4">
+			  <div id="simple-list-example" class="d-flex flex-column gap-2 simple-list-example-scrollspy text-center">
+				<a class="p-1 rounded title-1" href="#simple-list-item-1">Project Management</a>
+				<a class="p-1 rounded" href="#simple-list-item-2">CAD Design</a>
+				<a class="p-1 rounded" href="#simple-list-item-3">Arduino Basic</a>
+				<a class="p-1 rounded" href="#simple-list-item-4">Processing</a>
+				<a class="p-1 rounded" href="#simple-list-item-5">Laser Cutting</a>
+				<a class="p-1 rounded" href="#simple-list-item-6">3D Printing</a>
+			  </div>
+			</div>
+			<div class="texts col-6">
+				<div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
+				
+			<h4 id="simple-list-item-1">Project Management</h4>
+			<div>
+				
+				<h5>How to Build the Website</h5>
+<b>Step 1: TOOLS NEEDED</b>
+<ul>
+	<li>Installing all the tools necessary for the webpage build:</li>
+	<li>Git; Gitlab control</li>
+	<li>Github; Webpage server</li>
+	<li>Github desktop; To push or pull from the github server and to the github server</li>
+	<li>VScode; For writing our documents and code for the website and its pages</li>
+	<li>HTML Language: to write the website </li>
+	<li>CSS: Corresponds with html. Used to style the website</li>
+</ul>
+
+
+<b>Step 2: PAGE SETUP</b>
+<p>First sign up and create a repository on github.com. Make it public in order to grant access for others to modify. Add a README file for the purpose of writing the website description. </p>
+<img src="img/pm1.jpg" class="img-task" alt="">
+<p>Got to repository settings, in the settings sidebar, select ‘Pages’. In GitHub pages under branch, select main and the ‘/root’ and save.  Since the ‘/docs’ folder has not been installed yet, you select root. The setting will be changed to ‘/docs’ later after Docsify install.</p>
+Eg: 
+<img src="img/pm2.jpg" alt="">
+<b>Step 3: LOCAL SETUP</b>
+<p>1.	Github Desktop <br>
+Install Github desktop and sync your account. Clone your repository created earlier and open in Vs Code.</p>
+<img src="img/pm3.jpg" alt="">
+<p>2.	Vs Code <br>
+Local settings Open Github desktop, clone repository created earlier and open it in Visual Studio Code.</p>
+
+Example:
+<img src="img/pm4.jpg" alt="">
+<p>3.	Docsify Installation</p>
+<p>a.	Install docsify</p>
+<p>"npm i docsify-cli -g"</p>   
+<a href="https://www.npmjs.com/package/docsify-build-cli">Read more</a>
+<p>b.	Check the position then initialize environment</p>
+<p>"docsify init ./docs"</p>  
+<a href="https://cli.docsifyjs.org/#/?id=links">Read more</a>
+<p>c.	Preview <br>
+"docsify serve docs" <br>
+d.	Browser visit http://localhost:3000 <br>
+Example</p>
+<img src="img/pm5.jpg" alt="">
+
+
+		</div>
+				<h4 id="simple-list-item-2">CAD Design</h4>
+				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi in dignissimos magnam dolorem laudantium necessitatibus quas excepturi vel amet veritatis debitis molestiae culpa incidunt voluptatum perferendis officiis, minima iste dolor!
+					 
+					
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque inventore eveniet at quis dolor deleniti nobis? Accusantium qui, blanditiis possimus similique magnam facilis, quia quos obcaecati ea autem, est omnis!
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus, praesentium rerum libero vel voluptatum commodi minus asperiores. Consequatur reiciendis architecto doloribus. Fuga neque perferendis eligendi molestiae natus dicta officia provident?
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus ipsa vitae</p>
+				<h4 id="simple-list-item-3">Arduino Basic</h4>
+				<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi in dignissimos magnam dolorem laudantium necessitatibus quas excepturi vel amet veritatis debitis molestiae culpa incidunt voluptatum perferendis officiis, minima iste dolor!
+					 
+					
+					Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque inventore eveniet at quis dolor deleniti nobis? Accusantium qui, blanditiis possimus similique magnam facilis, quia quos obcaecati ea autem, est omnis!
+					Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus, praesentium rerum libero vel voluptatum commodi minus asperiores. Consequatur reiciendis architecto doloribus. Fuga neque perferendis eligendi molestiae natus dicta officia provident?
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus ipsa vitae</p>
+				<h4 id="simple-list-item-4">Processing</h4>
+				<p>...</p>
+				<h4 id="simple-list-item-5">Laser Cutting</h4>
+				<p>...</p>
+				<h4 id="simple-list-item-6">3D Printing</h4>
+				<p>...</p>
+			  </div>
+			</div>
+		  </div>
+		  
+
+
+
+
+
 			<svg class="vector-4" width="1445" viewBox="0 0 1445 0" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M1445 0L1.40667e-05 0" stroke="#1E1E1E"/>
 			</svg>
-			<p class="title-left"><b>ZJU-Design</b> Engineering</p>
-			<div class="navigation" >
-				
-					
-				
-					<div class="menu-items" >
-						<a href="index.html" class="projects" >
-							<b>Home</b> 
-							</a>
-                        <a href="index.html" class="projects" >
-                        <b>Assignments</b> 
-                        </a>
-                        <a href="team.html" class="members" >
-                        <b>Members</b> 
-                        </a>
-                        <a href="projects.html" class="school">
-                        <b>Projects</b> 
-                        </a>
-					</div>
-			</div>
+			
+			
 		</div>
 	</body>
 </html>

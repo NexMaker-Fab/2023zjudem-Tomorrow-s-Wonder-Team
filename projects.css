@@ -1,17 +1,20 @@
 .slide-16-9-10,
 .slide-16-9-10 * {
   box-sizing: border-box;
+  
 }
 .heading-projects {
   color: #1e1e1e;
   text-align: left;
-  font: 400 48px/120% "Poppins", sans-serif;
-  position: absolute;
+  font: 400 32px/120% "Poppins", sans-serif;
+  margin: 30px 100px;
+  /* position: absolute;
   left: 100px;
   top: 75px;
-  width: 684px;
+  width: 684px; */
 }
-.project-management {
+
+/* .project-management {
   color: #1e1e1e;
   text-align: left;
   font: 400 32px/200% "Inter", sans-serif;
@@ -118,20 +121,32 @@
   top: 146px;
   transform: translate(-1445px, -0.5px);
   overflow: visible;
+} */
+
+.container{
+ width: 80%; 
+
+
 }
 .navigation {
-  padding: 24px 42px 24px 42px;
+  padding: 24px 42px 10px 42px;
   display: flex;
   flex-direction: row;
   gap: 24px;
   align-items: flex-start;
-  justify-content: flex-end;
+  justify-content: space-between;
   flex-wrap: wrap;
-  width: 1340px;
-  position: absolute;
-  right: 100px;
-  top: -2px;
+  background-color:#dfd7a6;
+  width: 100%;
+  color: #383434;
 }
+
+/* .header-color{
+  display: block;
+  background-color: #dfd7a6;
+  height: 100px;
+} */
+
 .menu-items {
   display: flex;
   flex-direction: row;
@@ -140,8 +155,10 @@
   justify-content: flex-end;
   flex-shrink: 0;
   position: relative;
+  color: aqua;
+  
 }
-.projects {
+/* .projects {
   color: var(--black, #2d2d2d);
   text-align: right;
   font: 400 20px/27px "Poppins", sans-serif;
@@ -167,14 +184,63 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-}
+} */
 
 
 .title-left{
-  margin-left: 90px;
-  margin-top: 30px;
+  /* margin-left: 90px;
+  margin-top: 30px; */
+  /* margin-right: 500px; */
+  
+
+  
 }
  
-a{
+a:link{
   text-decoration: none;
+  color: #383434;
+  font-size: 16px;
+  font-family: Lato,Hind Siliguri,open sans,Helvetica,Helvetica Neue,sans-serif,Microsoft Yahei;
 }
+
+a:visited{
+  text-decoration: none; 
+  color: #383434;
+}
+
+
+
+.menu-1{
+  position: fixed;
+  
+
+}
+
+.texts{
+ margin-left: 500px;
+}
+
+.p-1:hover{
+ border-top:1.5px solid #dfd7a6;
+ border-bottom:1.5px solid #dfd7a6;
+ border-radius: 0;
+}
+
+.p-1:visited{
+  background-color:#dfd7a6;
+}
+
+.title-1{
+  margin-bottom: 50x;
+}
+
+
+img{
+  display: block;
+  width: 700px;
+  margin: 15px 0 30px 0;
+}
+
+
+
+

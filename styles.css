@@ -1,6 +1,7 @@
 body, html{
 height: 100%;
 margin: 0;
+overflow: hidden;
 }
 
 
@@ -30,16 +31,25 @@ margin: 0;
   margin-left: 50px;
   width: 70%;
   margin: 0 auto;
+  margin-top: 10px;
   
 }
 
+.button:hover{
+  background-color: #dfd7a6;
+  color: #ffffff;
+  border-color: #dfd7a6;
 
-.home-button, .members-button, .projects-button {
+}
+
+
+.button {
   border-radius: 80px;
   border-style: solid;
   border-color: #1e1e1e;
   border-width: 1px;
   padding: 25px 40px 25px 40px;
+  cursor: pointer;
   /* display: flex;
   flex-direction: row; */
   
@@ -48,8 +58,9 @@ margin: 0;
   /* position: absolute; */
   /* left: 100px; */
   /* top: calc(50% - -260px); */
+  font: 400 18px "Inter", sans-serif;
 }
-.projects {
+/* .projects {
   color: #1e1e1e;
   text-align: right;
   font: 600 20px/120% "Inter", sans-serif;
@@ -69,10 +80,10 @@ margin: 0;
   text-align: right;
   font: 600 20px/120% "Inter", sans-serif;
   position: relative;
-}
+} */
 .heading {
   width: 75px;
-  color: #1e1e1e;
+  color: #494444;
   text-align: left;
   font: 700 96px/120% "Poppins", sans-serif;
   /* position: absolute;
@@ -97,9 +108,8 @@ margin: 0;
   
   margin-bottom: 10px;
   display: block;
-  
-  
 }
+
 .navigation {
   /* padding: 24px 42px 24px 42px; */
   display: flex;
@@ -112,7 +122,7 @@ margin: 0;
   position: absolute;
   right: 100px;
   top: 0px; */
-  margin:30px 100px 0 0;
+  margin:30px 150px 0 0;
   
 }
 .menu-items {
@@ -123,8 +133,9 @@ margin: 0;
   justify-content: flex-end;
   flex-shrink: 0;
   position: relative;
+  
 }
-.projects2 {
+/* .projects2 {
   color: var(--black, #2d2d2d);
   text-align: right;
   font: 400 20px/27px "Poppins", sans-serif;
@@ -150,7 +161,7 @@ margin: 0;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-}
+} */
 .vector-5, .vector-5 * {
   box-sizing: border-box;
   }
@@ -160,11 +171,19 @@ margin: 0;
   overflow: visible;
  }
 
+
  a{
   text-decoration: none;
  }
 
+ a:visited{
+  color: #1e1e1e;
+  font-weight:500;
+ }
+
  a:hover{
   background-color: #dfd7a6 ;
+  color: #ffffff;
  }
+
 
