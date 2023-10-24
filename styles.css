@@ -96,7 +96,7 @@ overflow: hidden;
   
 }
 .intro-paragraph {
-  color: #1e1e1e;
+  color: #494444;
   text-align: justified;
   font: 400 20px/120% "Inter", sans-serif;
   /* position: absolute;
@@ -184,6 +184,10 @@ overflow: hidden;
  a:hover{
   background-color: #dfd7a6 ;
   color: #ffffff;
+ }
+
+ a:link{
+  color: #1e1e1e;
  }
 
 
