@@ -3,19 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="projects.css" rel="stylesheet" />
+    
         <link rel="stylesheet" type="text/css" href="projects.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>Poject Management</title>
 <style>
-    .texts{
+    /* .texts{
         
-        margin: 80px;
-    }
+        margin: 20px 50px;
+    } */
 
     ul{
-        list-style-type: none;  
-        margin-top: 50px; 
+        list-style:circle;
         margin-left: -30px;
+    }
+
+    li{
+        font-size: 16px;
+        margin: 0;
+        font-weight:400;
     }
 
     .steps{
@@ -24,8 +30,21 @@
     }
 
     p{
-        font-size: 18px;  
+        /* font-size: 18px;   */
     }
+
+    h2{
+        padding: 60px  0  0 50px;
+        
+        
+
+    }
+
+    h3{
+        margin-bottom: 40px;
+    }
+
+   
 
 
 </style>
@@ -33,49 +52,187 @@
 </head>
 <body>
 
-    <p class="title-left"><b>ZJU-Design</b> Engineering</p>
-			<div class="navigation" >	
+    <div class="header-color">
 				
-		<div class="menu-items" >
-				<a href="index.html" class="projects" >
-							<b>Home</b> 
-							</a>
-                <a href="index.html" class="projects" >
-                <b>Assignments</b> 
-                </a>
-                <a href="team.html" class="members" >
-                <b>Members</b> 
-                </a>
-                <a href="projects.html" class="school">
-                <b>Projects</b> 
-                </a>
-		</div>
-		
+	
+        <div class="navigation" >
+            
+                <div class="menu-items" >
+                    <a href="index.html" class="nav-link projects" >
+                    Home
+                        </a>
+                    <a href="projects.html" class="nav-link projects" >
+                    Assignments
+                    </a>
+                    <a href="team.html" class="nav-link members" >
+                    Members
+                    </a>
+                    <a href="final.html" class="nav-link school">
+                    Final Project
+                    </a>
+                </div>
+                <p class="title-left"><b>ZJU-Design</b> Engineering</p>
+        </div>
     </div>
 
-<div class="texts">
+<div class="container"> 
 
-    <h1>Project Management</h1>
+    <h2 class="task-title">Project Management</h2>
     <hr>
-    <ul>
-        <li class="steps">
-          Step 1 
-        </li>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit alias veniam ratione voluptatem eveniet. Dolores alias nisi doloribus explicabo delectus! Quos sint aspernatur aperiam sunt, excepturi necessitatibus saepe nisi reiciendis. </p>
-        <li class="steps">
-            Step 2  
-            
-        </li>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit alias veniam ratione voluptatem eveniet. Dolores alias nisi doloribus explicabo delectus! Quos sint aspernatur aperiam sunt, excepturi necessitatibus saepe nisi reiciendis. </p>
-         <li class="steps">
-            Step 3  
-            
-        </li>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit alias veniam ratione voluptatem eveniet. Dolores alias nisi doloribus explicabo delectus! Quos sint aspernatur aperiam sunt, excepturi necessitatibus saepe nisi reiciendis. </p>
-        
-    </ul>
+			<div class="texts">
+				
+				<h3>How to Build the Website</h3>
+<p><b>Step 1: TOOLS NEEDED</b></p>
+<ul>
+	<li>Installing all the tools necessary for the webpage build:</li>
+	<li>Git; Gitlab control</li>
+	<li>Github; Webpage server</li>
+	<li>Github desktop; To push or pull from the github server and to the github server</li>
+	<li>VScode; For writing our documents and code for the website and its pages</li>
+	<li>HTML Language: to write the website </li>
+	<li>CSS: Corresponds with html. Used to style the website</li>
+</ul>
 
 
+<b>Step 2: PAGE SETUP</b>
+<p>NB: Before we begin, it is worth noting that the GitHub repository had already been setup for our team website by our supervisor. It enables us to upload our website pages to a server for us to edit as team and also setup for others to open and view the work we have done during the course of the module.
+    <br>Repository Setup for Nexmaker: </p>
+    
+<img src="img/pm-1.png" alt="">
+<p>
+    We would like to illustrate how to setup a repository the instructions are as follows:
+First sign up and create a repository on github.com. Make it public in order to grant access for others to modify. Add a README file for the purpose of writing the website description. 
+</p>
+<img src="img/sc_1.png" alt="">
+<p>
+    Got to repository settings, in the settings sidebar, select ‘Pages’. In GitHub pages under branch, select main and the ‘/root’ and save.  Since the ‘/docs’ folder has not been installed yet, you select root. The setting will be changed to ‘/docs’ later after Docsify install.
+<br>Eg: 
+<img src="img/pm-1-2.png" alt="">
+</p>
+<b>Step 3: LOCAL SETUP</b>
+<p><b>1.	Github Desktop</b> <br>
+Install Github desktop and sync your account. Clone your repository created earlier and open in Vs Code.</p>
+<img src="img/sc_3.png" alt="">
+<p><b>2.	Vs Code</b> <br>
+Local settings Open Github desktop, clone repository created earlier and open it in Visual Studio Code.</p>
+
+Example:
+<img src="img/sc_4.png" alt="">
+<p><b>3.	Docsify Installation</b>
+<br><b>a. Install docsify</b><br>
+"npm i docsify-cli -g"
+<p>
+ <ul>
+    <li><b>What is it doing?</b></li>
+<li>auto build sidebar</li>
+<li>auto build page iframe for running when markdown content has: <img src="img/Screenshot 2023-10-29 233646.png" alt="" style=" width: 120px;">
+</li>
+</ul>
+    
+<b>build everytime when files change</b>
+<p>docsify-build serve [targetDir] [--skip-sidebar]
+    <br><a href="https://www.npmjs.com/package/docsify-build-cli " style="color: blue;">Read more</a></p>
+</p>
+
+	<img src="img/sc_5.png" alt=""> 
+
+<p><b>b. Check the position then initialize environment</b> <br>
+"docsify init ./docs" <br>
+	<a href="https://cli.docsifyjs.org/#/?id=links" style="color: blue;">Read more</a></p>  
+
+<p><b>c. Preview</b> <br>
+"docsify serve docs" <br></p>
+<p><b>d. Browser visit http://localhost:3000</b> <br>
+Example</p>
+<img src="img/sc_6.png" alt="">
+
+<p><b>e. Setting index.html</b>
+    <p>To set an index.html file, follow these simple steps:</p>
+
+<p>1. Create a new folder on your computer where you want to store your website files.</p>
+<p>2. Open a text editor (such as Notepad or Sublime Text) and create a new file.</p>
+<p>3. Save the file with the name "index.html" in the folder you created earlier. Make sure to save it with the ".html" extension.</p>
+<p>4. Open the index.html file in your text editor.</p>
+<p>5. Start by adding the basic structure of an HTML document by typing "&lt!DOCTYPE html&gt" at the top of the file.</p>
+<p>6. Below the doctype declaration, add an opening and closing "html" tag: "&lthtml&gt&lt/html&gt".</p>
+<p>7. Inside the "html" tags, add opening and closing "head" tags: &lthead&gt&lt/head&gt.</p>
+<p>8. Within the "head" tags, you can add various elements such as a title for your webpage using the "title" tag: "&lttitle&gtYour Website Title&lt/title&gt".</p>
+<p>9. After closing the "head" tags, add opening and closing "body" tags: &ltbody&gt&lt/body&gt.</p>
+<p>10. Inside the "body" tags, you can start adding content to your webpage such as headings, paragraphs, images, links, etc.</p>
+<p>For example:
+
+<img src="img/pm-8.png" alt="">
+</p>
+
+
+<p>11. Save your changes to the index.html file.</p>
+
+<p>Now you have successfully set up an index.html file! You can open it in a web browser to see how it looks or continue adding more content and styling to build your website further.
+	<br><a href="https://www.nexmaker.com/doc/1projectmanage/github&docsify.html" style="color: blue;">for more information</a></p>
+
+<p><b>f. Write document and save all under <a href="code.visualstudo.com" style="color: blue;">VScode</a></b></p>
+<p><b>g. Push to Github</b></p>
+
+<p>1. Click on the "Clone a repository" button or go to File > Clone Repository.</p>
+<p>2. Select the repository you want to work with from the list or enter its URL.</p>
+<p>3. Choose a local path where you want to clone the repository on your computer.</p>
+<p>4. Click on the "Clone" button to download a copy of the repository to your local machine.</p>
+<p>5. Once cloned, you can make changes to files within the repository folder on your computer using any text editor or IDE.</p>
+<p>6. Open the GitHub desktop app and you will see a list of changed files under "Changes".</p>
+<p>7. Review and select which files you want to commit by checking their checkboxes.</p>
+<p>8. Enter a brief summary of your changes in the "Summary" field and provide an optional description in the "Description" field.</p>
+<p>9. Click on the "Commit" button to save your changes locally.</p>
+<p>10. To push your changes to GitHub, click on "Push origin" at the top right corner of the app window.</p>
+<p>That's it! Your changes are now pushed to GitHub using the GitHub desktop app.</p>
+<img src="img/sc_4.png" alt="">
+
+
+<p>
+	<h5>4.	Designing in Figma</h5> <br>
+	Figma is a UI design software. We used figma as a basis for what we intend the website 	design to look like. We also use Figma with the assistance of plugins for the HTML & CSS 	code then take the necessary measures to make it a working website
+</p>
+<p>a.	Designing the website in Figma<br>
+	 Below is a screenshot of the design workflow. Pages are placed side by side with shared elements to ensure continuity in design.</p>
+<img src="img/SC_7.png" alt="">
+	 <p>
+	b.	We toggle between ‘Design Mode’ and ‘Developer Mode’ in Figma. Design mode allows us to add elements such as text, images, shapes, layers, colours, etc. 
+
+Examples:
+
+</p>
+Design mode:
+<img src="img/sc_8.png" alt=""> 
+Design mode Toggle for inserting elements in the frame to design the page
+
+<p>In Design Mode, we toggle between Elemental tools, Tabs to organize them and the Design tools sidebar to edit.</p>
+<img src="img/pm-figma1.png" alt="">
+
+<p>
+    Below is an illustration of how we created the page and various tools used in Figma. By adding elements such as the frame for the page, shapes and texts are layered for the buttons. On the right sidebar, we can view and change various parameters in the design. We can align the text, buttons, shapes, use creation tools to make icons. Edit texts, colors and grids of the page. We played with these various features and reach the result of the prototype for the Landing Page and other supporting website pages .
+</p>
+<img src="img/pm-figma2.png" alt="">
+
+Developer mode:
+<img src="img/sc_9.png" alt="">
+ 
+
+<p>Developer Mode enables us to modify the  and preview technical aspects of the UI design. We then take the code export it to Vscode for refining and adding interactive features such as links, and buttons to connected pages
+<br>
+	Figma Developer Mode Example :
+	<img src="img/pm-figma3.png" alt="">
+	</p>
+    <p>
+        A plugin called “AutoHTML” was used to generate code according to the setup of the page layers and elements. It enables us to view HTML, CSS and JS of the page which can be extracted by copying the code into a new file, or by downloading a compressed folder containing the respective html and css files. 
+    </p>
+
+	<p>Vscode Import Example:
+		<img src="img/SC_11.png" alt="">
+        HTML and CSS files pushed to the repository and viewed in vscode. This is where we will edit elements of the pages and continuously add information over the course of the assignments.
+	</p>
+
+
+
+</div>
 </div>
     
 </body>

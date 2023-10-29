@@ -7,17 +7,14 @@
   color: #1e1e1e;
   text-align: left;
   font: 400 32px/120% "Poppins", sans-serif;
-  margin: 30px 100px;
+  margin: 30px;
   /* position: absolute;
   left: 100px;
   top: 75px;
   width: 684px; */
 }
 
-.task-title{
 
-  margin-bottom: 50px;
-}
 
 /* .project-management {
   color: #1e1e1e;
@@ -129,7 +126,8 @@
 } */
 
 .container{
- width: 80%; 
+ max-width: 800px; 
+ justify-content: left;
 
 
 }
@@ -160,7 +158,7 @@
   justify-content: flex-end;
   flex-shrink: 0;
   position: relative;
-  color: aqua;
+  color: rgb(255, 255, 255);
   
 }
 /* .projects {
@@ -206,6 +204,7 @@ a:link{
   color: #383434;
   font-size: 16px;
   font-family: Lato,Hind Siliguri,open sans,Helvetica,Helvetica Neue,sans-serif,Microsoft Yahei;
+  
 }
 
 a:visited{
@@ -215,9 +214,12 @@ a:visited{
 
 
 
-.menu-1{
-  position: fixed;
-  
+
+
+ul{
+  list-style:circle;
+  justify-content: left;
+  font-size: 24px;
 
 }
 
@@ -245,6 +247,21 @@ img{
   width: 700px;
   margin: 15px 0 30px 0;
 }
+
+.list:active {
+  justify-content: left;
+  
+
+}
+
+a.list{
+  font-size: 24px;
+  margin: 20px 10px;
+  font-weight:600;
+  margin-bottom: 20px;
+ 
+}
+
 
 
 
