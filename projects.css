@@ -212,7 +212,15 @@ a:visited{
   color: #383434;
 }
 
-
+pre code {
+  background-color: #e7e9eb;
+  border-radius: 5px;
+  padding: 2em 20px;
+  margin: 20px 0;
+  font-size: 16px;
+  font-family: Helvetica, sans-serif;
+  box-sizing: inherit;
+}
 
 
 
