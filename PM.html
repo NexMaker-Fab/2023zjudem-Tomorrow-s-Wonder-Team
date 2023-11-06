@@ -168,7 +168,7 @@ Local settings Open Github desktop, clone repository created earlier and open it
 Example:
 <img src="img/sc_4.png" alt="">
 <p><b>3.	Docsify Installation</b>
-<br><b>a. Install docsify</b><br>
+<!-- <br><b>a. Install docsify</b><br>
 <pre>
     <code>
          npm i docsify-cli -g
@@ -214,9 +214,89 @@ Example:
 </p>
 <p><b>d. Browser visit http://localhost:3000</b> <br>
 Example</p>
-<img src="img/sc_6.png" alt="">
+<img src="img/sc_6.png" alt=""> -->
+<p>Setting up Docsify in VS Code involves a series of steps to create a conducive environment. Here are two approaches to achieve this:
+<br><br><b>Approach 1:</b>
+<br>1.	How to open the terminal?
+<br>Using Menu:
+<br>•	Click on "Terminal" in the top menu.
+<br>•	Select "New Terminal" from the dropdown menu.
+<br>Using Keyboard Shortcut:
+<br>•	Press (Ctrl/ Cmd + Shift + ` ) to open the integrated terminal.
+</p>
+<img src="img/Picture1.png" alt="">
+<img src="img/Picture2.png" alt="">
+<p>2.	In the terminal, execute the following command to install Docsify globally:
+    <pre>
+        <code>
+             npm i docsify-cli -g
+        </code>
+    </pre>
+This command installs the Docsify command-line interface globally on your system.
+</p>
+<img src="img/Picture3.png" alt="">
+<p>
+    3.	Confirm that you are in the desired directory. Then, initialize the environment using the command
+    <pre>
+        <code>
+            docsify init ./docs
+        </code>
+    </pre>
+This command sets up the necessary file structure for Docsify in a subdirectory called "docs."
 
-<p><b>e. Setting index.html</b>
+</p>
+<img src="img/Picture4.png" alt="">
+<p>
+    4.	Start the Docsify server by running the following command: 
+    <pre>
+        <code>
+           docsify serve docs
+        </code>
+    </pre>
+This command launches a local development server for your Docsify documentation.
+
+</p>
+<img src="img/Picture5.png" alt="">
+
+<p>
+    5.	Open your web browser and go to the following URL: <br>
+<a href="http://localhost:3000" style="color: blue;">http://localhost:3000</a> <br>
+<br>
+This will display your Docsify documentation locally. <br>
+
+</p>
+<img src="img/Picture6.png" alt="">
+<p>
+    Now you have successfully installed Docsify in Visual Studio Code and initialized a Docsify project. You can start adding your documentation content to the "docs" directory, and changes will be reflected in real-time as you save your files.
+</p>
+
+<p>
+    <b>Approach 2:</b> <br>
+"Live Server" extension for Visual Studio Code.<br>
+<br>
+1.	Install "Live Server" Extension:<br>
+•	Click on " Extensions view" in the left menu.<br>
+Using Keyboard Shortcut:<br>
+Press (Ctrl/ Cmd + Shift + x ) to open the "Extensions view".<br>
+•	Search for "Live Server" in the search bar.<br>
+•	Install the extension.<br>
+
+</p>
+<img src="img/Picture7.png" alt="">
+
+<p>
+    2.	Starting the Server:<br>
+•	Open your project in Visual Studio Code.<br>
+•	Navigate to the index.html file in your project, which is designated as the entry file.<br>
+•	In the bottom right corner of the window, you should see "Go Live" or a similar button provided by the "Live Server" extension.<br>
+•	Click on the "Go Live" button.<br>
+•	This action will launch a local development server, and your default web browser will open with the live version of your project.<br>
+
+</p>
+<img src="img/Picture8.png" alt="">
+
+
+<p><b>Setting index.html</b>
     <p>To set an index.html file, follow these simple steps:</p>
 
 <p>1. Create a new folder on your computer where you want to store your website files.</p>
@@ -271,8 +351,8 @@ Example</p>
 <p>Now you have successfully set up an index.html file! You can open it in a web browser to see how it looks or continue adding more content and styling to build your website further.
 	<br><a href="https://www.nexmaker.com/doc/1projectmanage/github&docsify.html" style="color: blue;">for more information</a></p>
 
-<p><b>f. Write document and save all under <a href="code.visualstudo.com" style="color: blue;">VScode</a></b></p>
-<p><b>g. Push to Github</b></p>
+<p><b>Write document and save all under <a href="code.visualstudo.com" style="color: blue;">VScode</a></b></p>
+<p><b>Push to Github</b></p>
 
 <p>1. Click on the "Clone a repository" button or go to File > Clone Repository.</p>
 <p>2. Select the repository you want to work with from the list or enter its URL.</p>
@@ -292,11 +372,12 @@ Example</p>
 	<h5>4.	Designing in Figma</h5> <br>
 	Figma is a UI design software. We used figma as a basis for what we intend the website 	design to look like. We also use Figma with the assistance of plugins for the HTML & CSS 	code then take the necessary measures to make it a working website
 </p>
-<p>a.	Designing the website in Figma<br>
+<p><b>a.	Designing the website in Figma</b><br>
 	 Below is a screenshot of the design workflow. Pages are placed side by side with shared elements to ensure continuity in design.</p>
 <img src="img/SC_7.png" alt="">
 	 <p>
-	b.	We toggle between ‘Design Mode’ and ‘Developer Mode’ in Figma. Design mode allows us to add elements such as text, images, shapes, layers, colours, etc. 
+	<b>b.	We toggle between ‘Design Mode’ and ‘Developer Mode’ in Figma.</b>
+    <br> Design mode allows us to add elements such as text, images, shapes, layers, colours, etc. 
 
 Examples:
 
