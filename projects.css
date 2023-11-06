@@ -232,7 +232,8 @@ ul{
 }
 
 .texts{
- margin-left: 500px;
+ /* margin-left: 500px; */
+ margin: 0 200px;
 }
 
 .p-1:hover{
@@ -268,6 +269,13 @@ a.list{
   font-weight:600;
   margin-bottom: 20px;
  
+}
+
+pre code{
+  display: block;
+  max-width: 700px;
+  margin: 0;
+  padding: 0;
 }
 
 
