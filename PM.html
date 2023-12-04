@@ -546,9 +546,454 @@ Example:
     This paragraph will work as an introduction to the teams website be it a welcome message or a  description of the work done from the team.
     <img src="img/fig_tut_10.png" alt="">
 </p>
+<br>
+<p>
+<h5>
+    Linking Pages
+</h5>
+</p>
+<img src="img/PM/Link_5.png" alt="">
+<p>
+    For Linking the Webpages, Figma was not used as the AutoHTML plugin did not have the function. Instead, the files were Pulled through VScode and the edit was made from there to link web pages together. Each page is linked to one another using HTML. The example shown will link the Assignments, Members and Final Projects page from the Home Index.html Page.
+</p>
+<img src="img/PM/Link_1.0.png" alt="">
+<p>
+    The Code connecting ‘projects.html’, ‘team.html’, ‘final.html’  pages from the Home ‘index.html’  page is as follows:  
+    <pre>
+        <code>
+<xmp>
+    <div class="menu-items" >
+        <a href="index.html" class="nav-link projects" >
+        Home
+        </a>
+        <a href="projects.html" class="nav-link projects" >
+        Assignments
+        </a>
+        <a href="team.html" class="nav-link members" >
+        Members
+        </a>
+        <a href="final.html" class="nav-link school">
+        Final Project
+        </a>
+    </div>
+                   
+ </xmp>    
+        </code>
+    </pre>
+
+</p>
+<img src="img/PM/Link_4.png" alt="">
+<p>
+    Above is the screenshot of the Cloned Github Folder. The only way the files of the pages is read is provided that they are within the same folder. This way, the link in the HTML code reads the files by default.
+</p>
+<br>
+<p>
+<h5>Figma Dev Mode Explained: Your Design Inspector</h5>
+</p>
+<img src="img/PM/Dev Mode.png" alt="">
+<p>
+    Dev Mode is  a dedicated space for developers to inspect, understand, and translate designs into code, much like a browser inspector for websites.
+
+    
+    
+    
+</p>
+
+<p>
+Here's what you can do with Figma Dev Mode:
+</p>
+<p>
+Inspect like a pro: Hover over layers and see detailed information like measurements, styles, and code snippets. No Need to dig through menus or guessing specs.
+    
+</p>
+<img src="img/PM/Dev Mode-2.png" alt="">
+
+<p>
+    Copy styles and tokens: Easily grab CSS or Sass code for colors, fonts, and other styles. Use them directly in  your code or create a central style sheet for consistency.
+</p>
+<img src="img/PM/Dev_mode_3.jpg" alt="">
+<p>
+    Component magic: Inspect and export reusable components with their code, variants, and properties. This speeds up development and keeps your codebase organized.
+</p>
+
+<p>
+    <b>
+        Getting Started with Figma Dev Mode:
+    </b>
+    <br>
+    Open the Dev Mode panel: Click the </> icon in the top right corner of your Figma window.
+</p>
+<img src="img/PM/Dev_mode_2.jpg" alt="">
+
+<p>
+    Select a layer: Click on any layer in your design to inspect its details.
+</p>
+
+<img src="img/PM/Dev_mode_5.jpg" alt="">
+
+<p>
+    Explore the panels: You'll see panels for Code, Styles & Tokens, Layers, and Properties. Each one gives you 	specific information and tools.
+</p>
+<img src="img/PM/Dev_mode_3.jpg" alt="">
+<p>
+    Copy-paste or generate code: Use the Copy Code button for individual styles or tokens, or the Generate Code button for the entire frame or selected components. Choose your preferred format (React, Vue, etc.).
+</p>
+<p>
+    Example using a paragraph layer: 
+</p>
+<img src="img/PM/Dev_mode_4.jpg" alt="" style="width: 400px;">
+
+<p>
+    *As of this writing, Figma Dev Mode is still in beta.
+</p>
+
+<br>
+<p>
+    <h5>AUTOHTML</h5>
+</p>
+<img src="img/PM/autohtml.png" alt="">
+<p>
+    The AutoHTML plugin for Figma is a powerful tool designed to bridge the gap between design and development. It streamlines the process of converting your Figma designs into clean, production-ready HTML code.
+</p>
+<img src="img/PM/autohtml_1.png" alt="">
+<br>
+<h5>Exporting with ease:</h5>
+<p>
+    Select a frame in your Figma design and run the plugin. AutoHTML analyzes your layers, styles, and components, and automatically generates the corresponding HTML code.
+</p>
+<img src="img/PM/autohtml_2.png" alt="">
+<p>
+    No need for manual coding or tedious copy-pasting. AutoHTML takes care of the heavy lifting, saving you valuable time and effort.
+</p>
+
+<p>
+    <h5>
+        Clean and organized code:
+    </h5>
+</p>
+<img src="img/PM/autohtml_3.png" alt="">
+
+<p>
+    The generated code is well-structured, easy to read, and follows best practices. You get a solid foundation to build upon, whether you're working with React, Vue, or plain HTML.
+    
+</p>
+<p>
+AutoHTML ensures your code is maintainable and scalable, making future modifications and collaboration a breeze.
+    
+</p>
+
+<p>
+    Example:
+    <pre>
+        <code>
+ <xmp>
+    <div class="projetcs">
+        <div class="heading-projects">Projects</div>
+        <div class="project-management">Project Management</div>
+        <div class="paragraph">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua.
+        </div>
+        <div class="cad-design">CAD Design</div>
+        <div class="arduino-basic">Arduino Basic</div>
+        <div class="processing">Processing</div>
+        <div class="laser-cutting">Laser Cutting</div>
+        <div class="_3-d-printing">3D Printing</div>
+        <div class="final-project">Final Project</div>
+        <svg
+          class="vector-4"
+          width="1445"
+          height="2"
+          viewBox="0 0 1445 2"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M1445 1L1.40667e-05 1" stroke="#1E1E1E" />
+        </svg>
+      
+        <div class="navigation">
+          <div class="menu-items">
+            <div class="projects">Home</div>
+            <div class="members">Assignments</div>
+            <div class="school">Members</div>
+          </div>
+        </div>
+        <div class="zju-design-engineering">
+          <span>
+            <span class="zju-design-engineering-span">ZJU-Design</span>
+            <span class="zju-design-engineering-span2">Engineering</span>
+          </span>
+        </div>
+      </div>
+</xmp>   
+        </code>
+    </pre>
+</p>
+
+<p>
+    <h4>Style with efficiency:</h4>
+      Color styles, text styles, and effect styles are automatically converted into CSS variables. This promotes consistency and flexibility, allowing you to easily update styles across your entire codebase.
+      CSS classes are named logically, based on the corresponding layers in your Figma design. This makes it intuitive to map your design elements to their code counterparts.
+      
+    <pre>
+        <code>
+ <xmp>
+      .projetcs,
+      .projetcs * {
+        box-sizing: border-box;
+      }
+      .projetcs {
+        background: #f8f8f8;
+        width: 1445px;
+        height: 812px;
+        position: relative;
+        overflow: hidden;
+      }
+      .heading-projects {
+        color: #1e1e1e;
+        text-align: left;
+        font-family: "Poppins-Regular", sans-serif;
+        font-size: 48px;
+        line-height: 120%;
+        font-weight: 400;
+        position: absolute;
+        left: 100px;
+        top: 95px;
+        width: 684px;
+      }
+      .project-management {
+        color: #1e1e1e;
+        text-align: left;
+        font-family: "Inter-Regular", sans-serif;
+        font-size: 32px;
+        line-height: 200%;
+        font-weight: 400;
+        position: absolute;
+        left: 100px;
+        top: 286px;
+        width: 388px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+      }
+      .paragraph {
+        color: #1e1e1e;
+        text-align: justified;
+        font-family: "Inter-Regular", sans-serif;
+        font-size: 20px;
+        line-height: 120%;
+        font-weight: 400;
+        position: absolute;
+        left: 100px;
+        top: 207px;
+        width: 684px;
+        height: 75px;
+      }
+      .cad-design {
+        color: #1e1e1e;
+        text-align: left;
+        font-family: "Inter-Regular", sans-serif;
+        font-size: 32px;
+        line-height: 200%;
+        font-weight: 400;
+        position: absolute;
+        left: 100px;
+        top: 350px;
+        width: 388px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+      }
+      .arduino-basic {
+        color: #1e1e1e;
+        text-align: left;
+        font-family: "Inter-Regular", sans-serif;
+        font-size: 32px;
+        line-height: 200%;
+        font-weight: 400;
+        position: absolute;
+        left: 100px;
+        top: 414px;
+        width: 388px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+      }
+      .processing {
+        color: #1e1e1e;
+        text-align: left;
+        font-family: "Inter-Regular", sans-serif;
+        font-size: 32px;
+        line-height: 200%;
+        font-weight: 400;
+        position: absolute;
+        left: 100px;
+        top: 478px;
+        width: 388px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+      }
+      .laser-cutting {
+        color: #1e1e1e;
+        text-align: left;
+        font-family: "Inter-Regular", sans-serif;
+        font-size: 32px;
+        line-height: 200%;
+        font-weight: 400;
+        position: absolute;
+        left: 100px;
+        top: 542px;
+        width: 388px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+      }
+      ._3-d-printing {
+        color: #1e1e1e;
+        text-align: left;
+        font-family: "Inter-Regular", sans-serif;
+        font-size: 32px;
+        line-height: 200%;
+        font-weight: 400;
+        position: absolute;
+        left: 100px;
+        top: 606px;
+        width: 388px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+      }
+      .final-project {
+        color: #1e1e1e;
+        text-align: left;
+        font-family: "Inter-SemiBold", sans-serif;
+        font-size: 32px;
+        line-height: 200%;
+        font-weight: 600;
+        position: absolute;
+        left: 100px;
+        top: 670px;
+        width: 388px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-start;
+      }
+      .vector-4 {
+        width: 0px;
+        height: 1445px;
+        position: absolute;
+        left: 1445px;
+        top: 152px;
+        transform: translate(-1445px, -0.5px);
+        overflow: visible;
+      }
+      .navigation {
+        padding: 24px 42px 24px 42px;a
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        align-items: flex-start;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        width: 1245px;
+        position: absolute;
+        right: 142px;
+        top: 0px;
+      }
+      .menu-items {
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        align-items: center;
+        justify-content: flex-end;
+        flex-shrink: 0;
+        position: relative;
+      }
+      .projects {
+        color: var(--black, #2d2d2d);
+        text-align: right;
+        font-family: "Poppins-Regular", sans-serif;
+        font-size: 20px;
+        line-height: 27px;
+        font-weight: 400;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      .members {
+        color: var(--black, #2d2d2d);
+        text-align: right;
+        font-family: "Poppins-Regular", sans-serif;
+        font-size: 20px;
+        line-height: 27px;
+        font-weight: 400;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      .school {
+        color: var(--black, #2d2d2d);
+        text-align: right;
+        font-family: "Poppins-Regular", sans-serif;
+        font-size: 20px;
+        line-height: 27px;
+        font-weight: 400;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+      .zju-design-engineering {
+        color: #1e1e1e;
+        text-align: left;
+        font-family: "-", sans-serif;
+        font-size: 20px;
+        line-height: 120%;
+        font-weight: 400;
+        position: absolute;
+        right: 86px;
+        top: 27px;
+        transform-origin: 0 0;
+        transform: rotate(0deg) scale(1, 1);
+      }
+      .zju-design-engineering-span {
+        color: #1e1e1e;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 20px;
+        line-height: 120%;
+        font-weight: 700;
+      }
+      .zju-design-engineering-span2 {
+        color: #1e1e1e;
+        font-family: "Inter-Regular", sans-serif;
+        font-size: 20px;
+        line-height: 120%;
+        font-weight: 400;
+      }
+           
+
+</xmp>   
+        </code>
+    </pre>
+</p>
+<p>
+AutoHTML eliminates the need for repetitive coding and manual adjustments. Focus on the creative aspects of front-end development and let the plugin handle the grunt work.
+
+</p>
+<p>
+It's a perfect tool for designers and developers alike. Designers can quickly share their vision with developers, and developers can get started on coding right away with a solid foundation.
+
+</p>
+<p>
+Overall, AutoHTML simplifies the design-to-code workflow, saves time, and increases efficiency. For either a seasoned developer or new to coding, this plugin is valuable to the Figma toolkit.
 
 
-
+</p>
+<br>
+<br>
 
 
 
