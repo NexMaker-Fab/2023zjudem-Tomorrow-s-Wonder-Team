@@ -1,6 +1,15 @@
-body{
+/* body{
    background-color: #dfd7a6;
-}
+} */
+
+body, html{
+   background-image:url(img/colorful2.png);
+   background-repeat: no-repeat;
+   background-size: 110%;
+   background-position:top;
+   
+ 
+ }
 
 .slide-16-9-7, .slide-16-9-7 * {
     box-sizing: border-box;
@@ -23,7 +32,10 @@ body{
 
 
 .meet-the-team {
-   color: #1e1e1e;
+   /* background: -webkit-linear-gradient(rgb(24, 140, 236), rgb(182, 55, 93));
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent; */
+   /* color: #1e1e1e; */
     text-align: center;
     font: 400 32px/120% 'Poppins', sans-serif;
     /* position: absolute;
@@ -31,6 +43,7 @@ body{
    top: 75px;
     width: 547px; */
     margin: 50px 0;
+    
     
    }
 
@@ -81,19 +94,7 @@ body{
     align-self: stretch;
    }
 
-/* .member-2 {
-   display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 386px;
-    height: 255px;
-    min-width: 320px;
-    position: absolute;
-    left: 527px;
-   top: 210px;
-   } */
+
 
 .title-description2 {
    display: flex;
@@ -106,61 +107,7 @@ body{
     position: relative;
    }
 
-/* .member-3 {
-   display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 387px;
-    height: 255px;
-    min-width: 320px;
-    position: absolute;
-    left: 953px;
-   top: 210px;
-   } */
 
-/* .member-4 {
-   display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 387px;
-    height: 255px;
-    min-width: 320px;
-    position: absolute;
-    left: 100px;
-   top: 511px;
-   } */
-
-/* .member-5 {
-   display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 386px;
-    height: 255px;
-    min-width: 320px;
-    position: absolute;
-    left: 527px;
-   top: 511px;
-   } */
-
-/* .member-6 {
-   display: flex;
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    width: 387px;
-    height: 255px;
-    min-width: 320px;
-    position: absolute;
-    left: 953px;
-   top: 511px;
-   } */
 
    .team-members{
     display: grid;
@@ -184,7 +131,7 @@ body{
       align-items: flex-start;
       justify-content: space-between;
       flex-wrap: wrap;
-      background-color:#dfd7a6;
+      /* background-color:#dfd7a6; */
       width: 100%;
       color: #383434;
     }
@@ -203,40 +150,6 @@ body{
     }
 
 
-/* .projects {
-   color: var(--black, #2d2d2d);
-    text-align: right;
-    font: 400 20px/27px 'Poppins', sans-serif;
-    position: relative;
-    display: flex;
-   align-items: center;
-   justify-content: flex-end}
-
-.members {
-   color: var(--black, #2d2d2d);
-    text-align: right;
-    font: 400 20px/27px 'Poppins', sans-serif;
-    position: relative;
-    display: flex;
-   align-items: center;
-   justify-content: flex-end}
-
-.school {
-   color: var(--black, #2d2d2d);
-    text-align: right;
-    font: 400 20px/27px 'Poppins', sans-serif;
-    position: relative;
-    display: flex;
-   align-items: center;
-   justify-content: flex-end} */
-
-  
-
-   /* .title-left{
-      margin-left: 90px;
-      margin-top: 30px;
-    } */
-
     .card-img-top{
       padding: 35px;
       -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
@@ -246,7 +159,11 @@ body{
 
     .card:hover{
       cursor: pointer;
-      background-color:#dfd7a6;
+      background: linear-gradient(white, white) padding-box,
+      linear-gradient(to right, rgb(24, 140, 236), rgb(213, 57, 89)) border-box;
+     /* border-radius: 50em; */
+     border: 2px solid transparent;
+
     }
 
     a:link{
@@ -262,13 +179,47 @@ body{
     }
 
     .nav-link:hover{
-      /* color: #ffffff; */
+      
     }
 
     .card-title{
       text-decoration: none;
     }
 
+    img:hover{
+   -webkit-filter: none;
+    }
+
+
+    .animate-charcter-2
+    {
+       text-transform: uppercase;
+      background-image: linear-gradient(
+        -225deg,
+       
+        #3361c3 0%,
+        #44107a 29%,
+        #ff1361 67%,
+        #ffa200 100%
+      );
+      background-size: auto auto;
+      background-clip: border-box;
+      background-size: 100% auto;
+      color: #420b0b;
+      background-clip: text;
+      text-fill-color: transparent;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: textclip 1.8s linear infinite;
+      display: inline-block;
+      font-weight: bold;
+         
+    }
+    @keyframes textclip {
+      to {
+        background-position: 200% center;
+      }
+    }
 
 
     
