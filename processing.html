@@ -553,9 +553,367 @@
 </p>
 <br>
 
+
+
+
 <p>
 <h4>Processing with Arduino</h4>
 </p>
+
+<p>
+  <h5>Building a GUI for Temperature and Humidity Monitoring</h5>
+</p>
+
+<p>
+ <b>Introduction</b>
+ <br>
+This project focuses on creating a Graphical User Interface (GUI) in Processing to display temperature and humidity data obtained from an Arduino board equipped with a DHT sensor. The primary goal is to visually represent real-time environmental data. The essential components for this project include an Arduino board, a DHT sensor, and the Processing software. The Arduino interfaces with the DHT sensor to gather data, which is then transmitted to the Processing application. Here, a GUI is developed to showcase the temperature and humidity readings pictorially. The Processing sketch requires customization to specify your serial port and baud rate settings. Once the Arduino is programmed and connected to a computer, the Processing application visualizes the environmental conditions using graphical elements. The "meter" library in Processing is utilized to create an intuitive graphical interface. This project encompasses both hardware assembly and software development, with resources provided to guide through each step.
+ 
+</p>
+
+<p>
+<b>Hardware Requirements:</b>
+<li>
+Arduino Nano
+
+</li>
+<li>
+DHT11 (Alternative options include DHT22 or similar sensors)
+
+</li>
+<li>
+Breadboard
+
+</li>
+<li>
+Connecting wires
+
+</li>
+
+<p>
+
+</p>
+<b>Software Requirements:</b>
+<li>
+Arduino IDE
+
+</li>
+<li>
+Processing
+</li>
+
+</p>
+
+<p>
+ <b>Technical Specifications of DHT11:</b>
+<li>
+Affordable pricing
+
+</li>
+<li>
+Maximum current consumption during data conversion: 5mA
+
+</li>
+<li>
+Temperature measurement range: 0-50°C with ±2°C accuracy
+
+</li>
+<li>
+Humidity measurement range: 20-80% with 5% accuracy
+
+</li>
+<li>
+Maximum sampling rate: 1Hz (once per second)
+
+</li>
+<li>
+Physical dimensions: 15.5mm x 12mm x 5.5mm
+
+</li>
+
+</p>
+
+<br>
+
+<h5>Configuration of DHT Sensor Pins:</h5>
+<img src="img/processing/DHT Pin configuration.png" alt="">
+
+
+<h5>Illustration of Component Connections:</h5>
+<img src="img/processing/Component Picture (Hardware).jpg" alt="">
+
+<p>
+ <h5>Hardware Setup:</h5> 
+To configure the hardware, connect the DHT sensor to the Arduino as per the provided schematic diagram. After hardware assembly, program the Arduino to read data from the sensor. Subsequently, create a GUI in Processing to display the temperature and humidity readings via Arduino's serial port. Installation of the "meter" library in Processing is straightforward, achievable through the library manager. The provided code scripts for Arduino and Processing are designed to display temperature and humidity readings instantly. This project is accessible even for those with basic coding knowledge, with step-by-step instructions available in the resources.
+
+</p>
+
+<p>
+<h5>Arduino Code Implementation:</h5>
+
+
+<li>
+In Arduino IDE, download the required libraries for the DHT sensor.
+
+</li>
+<li>
+Modify the default environment setup for the DHT sensor as per the provided instructions or refer to the code section for details.
+
+</li>
+<img src="img/processing/Arduino Code 1.jpg" alt="">
+<img src="img/processing/Arduino Code 2.jpg" alt="">
+<img src="img/processing/Arduino Code 3.jpg" alt="">
+<img src="img/processing/Arduino Code 4.jpg" alt="">
+
+
+</p>
+
+<b>Arduino Code:</b>
+
+<pre>
+  <code>
+    #include "DHT.h"
+    #define DHTPIN 2 //connect DHT data pin to D2
+    #define DHTTYPE DHT11   // DHT 11
+    DHT dht(DHTPIN, DHTTYPE);
+      float temp = 0;
+      float hum = 0;
+    void setup() {
+      Serial.begin(9600);
+        pinMode(DHTPIN, OUTPUT);
+      dht.begin(); //This line for get data from sensor
+    
+    }
+    
+    void loop() {
+    temp = dht.readTemperature();
+     
+     hum = dht.readHumidity();
+    Serial.print(temp);
+    Serial.print(",");
+    Serial.print(hum);
+    
+      delay(1000);
+    }
+
+  </code>
+</pre>
+
+<p>
+ <h5>Processing Code Implementation:</h5> 
+<li>
+Open Processing and install the Meter library.
+
+</li>
+<li>
+Write code in Processing to create meters for temperature and humidity, and to fetch data from the Arduino.
+
+</li>
+<img src="img/processing/Processing Code 1.jpg" alt="">
+<img src="img/processing/Processing Code 2.jpg" alt="">
+
+</p>
+
+
+<b>Processing Code:</b>
+
+<pre>
+  <code>
+    // Import Meter library
+    import meter.*;
+    // Import serial library
+    import processing.serial.*;
+    
+    Serial port; // Define a port for getting data
+    
+    Meter Tm, Hm;  //Create 2 meter for Temperature and Humadity
+    
+    void setup(){
+      // Create window for GUI 
+      size(1000, 500); // Size of the window (width, height)
+      background(0,0,0); // BG-Color of window (R,G,B)
+      
+      // declare the port as your Arduino port to help get data
+      port = new Serial(this, "COM4", 9600); //name of the port would be different for every device
+      
+      // TEMPERATURE METER
+      Tm = new Meter(this, 50, 150);  //x and y coordinates of meter's upper left corner
+      
+      Tm.setTitleFontSize(20);
+      Tm.setTitleFontName("Arial bold");
+      Tm.setTitle("Temperature (C)");
+      
+      // Change meter scale values
+      String[] scaleLabels = {"0", "5", "10", "15", "20", "25", "30", "35", "40", "45", "50"};
+      Tm.setScaleLabels(scaleLabels);
+      Tm.setScaleFontSize(16);
+      Tm.setScaleFontName("Times new roman bold");
+      Tm.setScaleFontColor(color(175,0,42));
+      
+      // We can also display the value of meter
+      Tm.setDisplayDigitalMeterValue(true);
+      
+      // Lets do some more modifications so our meter looks nice
+      Tm.setArcColor(color(230,0,0));
+      Tm.setArcThickness(10);
+      
+      Tm.setMaxScaleValue(60);
+      Tm.setMinInputSignal(0);
+      Tm.setMaxInputSignal(60);
+      Tm.setNeedleThickness(1);
+      
+      // HUMIDITY METER
+      // lets take some refference from first meter
+      int mx = Tm.getMeterX(); // x coordinate of Hm
+      int my = Tm.getMeterY(); // y coordinate of Hm
+      int mw = Tm.getMeterWidth();
+      
+      Hm = new Meter(this, mx + mw + 20, my);
+      
+      Hm.setTitleFontSize(20);
+      Hm.setTitleFontName("Arial bold");
+      Hm.setTitle("Humidity (%)");
+      
+      // Change meter scale values
+      String[] scaleLabels2 = {"0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"};
+      Hm.setScaleLabels(scaleLabels2);
+      Hm.setScaleFontSize(16);
+      Hm.setScaleFontName("Times new roman bold");
+      Hm.setScaleFontColor(color(153,0,26));
+      
+      //display the value of meter
+      Hm.setDisplayDigitalMeterValue(true);
+      
+      // This code will modify the default Meter design
+      Hm.setArcColor(color(255,215,0));
+      Hm.setArcThickness(10);
+      
+      Hm.setMaxScaleValue(100);
+      Hm.setMinInputSignal(1);
+      Hm.setMaxInputSignal(100);
+      Hm.setNeedleThickness(1);
+    }
+    
+    void draw() {
+      textSize(30);  //Title for our window
+      fill(211,33,45); // Title font color (r,g,b)
+      text("Temperature and Humidity", 300, 100); // ("text", x-cordinate, y-cordinate)
+    
+      if (port.available() > 2) {
+        String val = port.readString(); // read incoming string data on the serial port
+        // First, split the temp and hum data
+        String[] list = split(val, ','); // splits value separated by ','
+        
+        // Check if the array has at least two elements [Temp & Hum Data]
+        if (list.length >= 2) {
+          float temp = float(list[0]); // first value is Temperature
+          float hum = float(list[1]);  // second value is Humidity
+          //updateMeter accepts only int values so convert data float to int
+          Tm.updateMeter(int(temp)); // update temparature on Meter
+          Hm.updateMeter(int(hum));  // update Humadity on Meter
+          println("Temperature: " + temp + " °C  " + "Humidity: " + hum + "%");
+          delay(1000);
+        } else {
+          println("Error: Not enough values received");  // somehow the sensor is unable to read data or send data to meter
+        }
+      }
+    } 
+  </code>
+</pre>
+
+<p>
+ <h5>Hardware Assembly:</h5> 
+<li>Required components include a DHT11 sensor, breadboard, three wires, and an Arduino Uno (or a DHT22 and Arduino Nano as alternatives).
+</li>
+<li>Connect the first wire to Vcc (5v/3.3v).
+</li>
+<li>Attach the second wire to Pin 2 on the Arduino Uno or D2 on the Arduino Nano.
+</li>
+<li>Leave the third wire unconnected.
+</li>
+<li>Connect the last wire to the GND (Ground) terminal.
+</li>
+<img src="img/processing/Hardware Setup.jpg" alt="">
+
+</p>
+
+<p>
+  <h5>Connecting to a Computer:</h5>
+<br>After assembling the hardware, connect the Arduino device to a laptop or desktop using a USB cable.
+</p>
+
+<p>
+ <h5>Running the Code:</h5>
+<li>Start the Processing software on your computer.
+</li>
+<li>With the Arduino connected, initiate the program by pressing the play button.
+</li>
+<li>The GUI should now display real-time temperature and humidity 
+</li>
+
+</p>
+<img src="img/processing/Meter 1 pro.png" alt="">
+<img src="img/processing/Meter 2 pro.png" alt="">
+<img src="img/processing/Meter 3 pro.png" alt="">
+
+<p>
+ <h5>Practical Demonstration:</h5> 
+<li>To test the sensor, first apply heat to the DHT11 sensor using a glass of hot water. This will allow you to observe the sensor's ability to detect changes in temperature.
+</li>
+<li>For testing humidity and temperature responsiveness to human presence, place your hand near the sensor. The warmth and humidity from your hand will alter the environmental conditions around the sensor.
+</li>
+<li>Observe the changes in the readings on the GUI dials as the sensor responds to the heat and humidity from your hand. This demonstrates the sensor's capability to detect relatively small and immediate changes in its surroundings, like those caused by body heat.
+</li>
+
+</p>
+
+<video width="640" height="480" controls muted>
+  <source src="video/1st smaller.mp4" type="video/mp4">
+  <source src="video/1st smaller.mp4" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+<video width="640" height="480" controls muted>
+  <source src="video/2nd smaller.mp4" type="video/mp4">
+  <source src="video/2nd smaller.mp4" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+
+
+<p>
+  <h5>References:</h5>
+<a class="blue-link" href="https://www.nexmaker.com/">https://www.nexmaker.com/</a>
+<br>
+<a class="blue-link" href="https://www.hackster.io/">https://www.hackster.io/</a>
+
+</p>
+
+<br>
+<br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <img src="img/Arduino/Image_20231204211955.jpg" alt="">
 <p>
@@ -570,7 +928,7 @@
 <p>
  <h5>Circuit Diagram</h5>
 
-<img src="img/Arduino/Image_20231204221557.png" alt="">   
+<img src="img/Arduino/wires.png" alt="">   
 </p>
 
 
