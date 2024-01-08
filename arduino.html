@@ -303,13 +303,40 @@ Programs written using Arduino Software (IDE) are called sketches. The Arduino S
 <h4>Switch</h4>
 <p>We can use swith to control the circuit, in this case we use pin 7 as input port</p>
 <video width="640" height="480" controls muted>
-    <source src="video/Ar-vid-1.mp4" type="video/mp4">
-    <source src="video/Ar-vid-1.mp4" type="video/ogg">
+    <source src="video/color-arduino.mp4" type="video/mp4">
+    <source src="video/color-arduino.mp4" type="video/ogg">
   Your browser does not support the video tag.
   </video>
+  <br>
 <p>
     Its a simple Led blinker using Arduino. In this example which is includes simple code that we can view, simulate, and modify. When the simulation is off the point Red and Green Led is also off. When we select “Start Simulation” the point Green Led will turn on Because Simulation is ON.
 </p>
+
+<br>
+ <h5>Code:</h5>
+<pre>
+  <code>
+    // C++ code
+    //
+    void setup()
+    {
+      pinMode(LED_BUILTIN, OUTPUT);
+    }
+    
+    void loop()
+    {
+      digitalWrite(LED_BUILTIN, HIGH);
+      delay(1000); // Wait for 1000 millisecond(s)
+      digitalWrite(LED_BUILTIN, LOW);
+      delay(1000); // Wait for 1000 millisecond(s)
+    }
+    
+  </code>
+</pre>
+
+
+
+
 <br>
     <br>
 <p>
@@ -319,10 +346,7 @@ In Tinkercad Circuits, you can simulate an Arduino with an LCD screen to create 
 
 <br>Components Needed: <br>
 •	Arduino Uno<br>
-•	LCD screen <br>
-•	Potentiometer <br>
-•	Jumper wires<br>
-  
+•	LCD (I2C) <br>
 
 </p>
 <br>
@@ -339,43 +363,108 @@ In Tinkercad Circuits, you can simulate an Arduino with an LCD screen to create 
 <p>
    <b>Connect Arduino and LCD:</b> <br>
 •	Connect the components using jumper wires.<br>
-•	Connect the VCC and GND of the LCD to the 5V and GND of the Arduino.<br>
-•	Connect the SDA and SCL of the LCD to the corresponding pins on the Arduino. 
+•	Connect the SDA and SCL pins of the LCD to the corresponding pins on the Arduino Uno.<br>
+•	Connect the VCC and GND pins of the LCD to the 5V and GND on the Arduino Uno. 
 </p>
-<p>
-    <b>Add Potentiometer for Contrast:</b><br>
-•	Drag a potentiometer onto the workspace.<br>
-•	Connect one leg of the potentiometer to 5V, the other to GND, and the middle leg to the VO (contrast) pin on the LCD.
-</p>
+
 
 <p>
     <b>Write Arduino Code:</b><br>
 •	Click on the Arduino Uno to open the code editor.<br>
-•	Write code to initialize the LCD, set up the contrast using the potentiometer, and display information.
+•	Write code to initialize the LCD and display information.
 
 </p>
 
 <pre>
     <code>
-        #include < LiquidCrystal.h>
-
-            // initialize the library with the numbers of the interface pins
-            LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-            
-            void setup() {
-              // set up the LCD's number of columns and rows:
-              lcd.begin(16, 2);
-              // Print a message to the LCD.
-              lcd.print("hello, world!");
-            }
-            
-            void loop() {
-              // set the cursor to column 0, line 1
-              // (note: line 1 is the second row, since counting begins with 0):
-              lcd.setCursor(0, 1);
-              // print the number of seconds since reset:
-              lcd.print(millis() / 1000);
-            }
+      #include &lt;Wire.h&gt;
+        #include &lt;LiquidCrystal_I2C.h&gt;
+        LiquidCrystal_I2C lcd(32,16,2);
+        int t=3000;
+        // calculator variables
+        float firstNum;
+        float secNum;
+        float answer;
+        String op;
+        
+        
+        void setup()
+        {
+        lcd.begin(16,2);
+        lcd.init();
+        lcd.backlight();
+        Serial.begin(9600);
+        }
+        
+        void loop()
+        {
+        // 1st NUmber
+        lcd.setCursor(0,0);
+        lcd.print("Tomorrows Wonder!");
+        while(Serial.available()==0)
+        {
+         
+        }
+        firstNum=Serial.parseFloat();
+        lcd.clear();
+         
+        // 2nd NUmber
+        lcd.setCursor(0,0);
+        lcd.print("Input 2nd Number");
+        while(Serial.available()==0)
+        {
+         
+        }
+        secNum=Serial.parseFloat();
+        lcd.clear();
+        
+        // Operation
+        lcd.setCursor(0,0);
+        lcd.print("Input Operator");
+        lcd.setCursor(0,1);
+        lcd.print("+,-,*,/");
+        while(Serial.available()==0)
+        {
+         
+        }
+        op=Serial.readString();
+        lcd.clear();
+        // Operation Statements
+        if(op=="+")
+        {
+         answer=firstNum+secNum;
+        }
+        if(op=="-")
+        {
+         answer=firstNum-secNum;
+        }
+          
+        if(op=="*")
+        {
+         answer=firstNum*secNum;
+        } 
+          
+        if(op=="/")
+        {
+         answer=firstNum/secNum;
+        } 
+        lcd.setCursor(0,0);
+        lcd.print(firstNum);
+        lcd.print(op);
+        lcd.print(secNum);
+        lcd.print("=");
+        lcd.print(answer);
+        
+        lcd.setCursor(0,1);
+        lcd.print("ok? Y");
+        while(Serial.available()==0)
+        {
+          
+        }
+        Serial.readString();
+        lcd.clear();
+        }
+        
             
     </code>
 </pre>
@@ -383,11 +472,11 @@ In Tinkercad Circuits, you can simulate an Arduino with an LCD screen to create 
 <p>
     <h4>Simulate and Test:</h4>
 <br>•	Click "Start Simulation" to see how your LCD displays the message.
-<br>•	Adjust the potentiometer to change the contrast.
-<img src="img/Arduino/ar-13.png" alt="">
+
+<img src="img/Arduino/arddd.png" alt="">
 </p>
 <p>
-    This basic setup allows you to simulate an Arduino with an LCD screen in Tinkercad Circuits. 
+  This basic setup allows you to simulate an Arduino with an LCD (I2C) screen in Tinkercad Circuits. 
 </p>
 
 <br>
@@ -537,7 +626,7 @@ Arduino UNO + Cable
  <p>
     <h5>Step 2: Hardware Installation</h5>
  </p>
- <img src="img/Arduino/2ar-4.jpg" alt="">
+ <img src="img/Arduino/4ard.png" alt="">
  <b>Connect ARDUINO to Pc Type A or B </b>
 
  <p>The diagram above shows the connection between MAX7219 Dot Matrix Module and Arduino Uno by using jumper wire. The detailed connection will be mentioned below:
@@ -815,7 +904,7 @@ CLK PIN --> 13
   </p>
 <img src="img/Arduino/Image_20231204211933.jpg" alt="">
 <img src="img/Arduino/Image_20231204211955.jpg" alt="">
-<img src="img/Arduino/Image_20231204221557.png" alt="">
+<img src="img/Arduino/wires.png" alt="">
 
 <p>
     Sonar:
