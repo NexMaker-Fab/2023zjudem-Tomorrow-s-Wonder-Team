@@ -751,6 +751,57 @@ Applications: Custom tools, medical instruments, functional prototypes.
 </p>
 <img src="img/3dPrint/3p-13.png" alt="">
 
+<br>
+<br>
+
+<h4>G-Code</h4>
+<p>
+    <b>INTRODUCTION </b>
+G Code is a special programming language that is interpreted by Computer Numerical Control (CNC) machines to create motion and other tasks. It is a language that can be quite complex at times and can vary from machine to machine. The basics, however, are much simpler than it first appears and for the most part follows an industry adopted standard. Mach4 has made a large leap closer to this standard. 
+An important point to remember when reading this manual: In describing motion of a machine it will always be described as tool movement relative to the work piece. In many machines the work piece will move in more axes than the tool; however the program will always define tool movement around the work piece. Axes directions follow the right hand rule. 
+
+</p>
+
+
+<p>
+    <b>Format </b>
+    <br>
+    In writing G Code programs there are some rules to be aware of as well as some general formatting guidelines that should be followed or at least considered. 
+    <p>
+       
+        The first part of any program should be a safe start up block. This line of code is used to make sure that some modes are disabled and others are set to their most common setting. An example safe start block would look like this: 
+       <br>
+        G00 G90 G17 G54 G40 G49 G80 
+
+    </p>
+    
+
+    <br>
+    
+    <p>
+This block of code tells the machine that we want to be in rapid mode and using absolute position in the XY plane of fixture offset 1.  At the same time we want to cancel any tool diameter and length offsets and make sure any active canned cycles are cancelled.  
+    <br>
+G00 – Rapid mode <br>
+    G90 – Absolute position mode <br>
+    G17 – XY plane select <br>
+    G54 – Fixture offset 1<br> 
+    G40 – Cutter compensation (tool diameter) cancel<br> 
+    G49 – Length offset cancel <br>
+    G80 – Canned cycle cancel <br>
+   
+    </p>
+    
+</p>
+<p>
+    It is recommended that this safe start block be used at the start of the program and also before or immediately following every tool change. It is common to restart a program from a tool change, having the safe start line there can greatly reduce the chance of a machine not acting as expected, the results of which can be aggravating at best and a crash at worst. The safe start block shown here is just an example. Every machine and every programmer are a little different and each will have their own start up block. 
+
+</p>
+
+<h5>G Code for our 3d model</h5>
+<img src="img/3dPrint/gcode 1.png" alt="">
+<img src="img/3dPrint/gcode 2.png" alt="">
+<img src="img/3dPrint/gcode 3.png" alt="">
+
 </div>
 </div>
 
