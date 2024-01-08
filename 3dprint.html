@@ -757,6 +757,7 @@ Applications: Custom tools, medical instruments, functional prototypes.
 <h4>G-Code</h4>
 <p>
     <b>INTRODUCTION </b>
+    <br>
 G Code is a special programming language that is interpreted by Computer Numerical Control (CNC) machines to create motion and other tasks. It is a language that can be quite complex at times and can vary from machine to machine. The basics, however, are much simpler than it first appears and for the most part follows an industry adopted standard. Mach4 has made a large leap closer to this standard. 
 An important point to remember when reading this manual: In describing motion of a machine it will always be described as tool movement relative to the work piece. In many machines the work piece will move in more axes than the tool; however the program will always define tool movement around the work piece. Axes directions follow the right hand rule. 
 
@@ -796,11 +797,72 @@ G00 – Rapid mode <br>
     It is recommended that this safe start block be used at the start of the program and also before or immediately following every tool change. It is common to restart a program from a tool change, having the safe start line there can greatly reduce the chance of a machine not acting as expected, the results of which can be aggravating at best and a crash at worst. The safe start block shown here is just an example. Every machine and every programmer are a little different and each will have their own start up block. 
 
 </p>
+<br>
+
+<p>
+    <h5>Code Descriptions </h5>
+    Here there are the most common G code commands:
+</p>
+<p>
+    <b>G00 – Rapid move:</b> Rapid moves are used to move from point to point in free space, not cutting material. These moves do not require a feed rate input as they take place at max velocity of the machine. In absolute position mode (G90) X, Y and Z define the end point of the move in the user coordinate system. In incremental position mode (G91) X, Y and Z define the distance and direction to move from the current position. Format: G00 X__ Y__ Z__ 
+</p>
+<p>
+    <b>G01 – Linear Feed Move:</b> Linear feed moves are point to point moves in a straight line at a federate specified by F. The moves are interpolated so all axes in motion reach the end point at the same time. In absolute position mode (G90) X, Y and Z define the end point of the move in the user coordinate system. In incremental position mode (G91) X, Y and Z define the distance and direction to move from the current position. 
+    Format: G01 X__ Y__ Z__ F__. 
+    
+</p>
+
+<p>
+    <b>G02/G03 – Arc Feed Move:</b> Used to cut an arc at a federate specified by F. An arc is defined by its start and end points, its radius or center point, a direction, and a plane. Direction is determined by G02, clockwise, and G03, counterclockwise, when viewed from the plane’s positive direction (If XY plane is selected look down so that the X axis positive direction is pointing to the right, and the Y axis positive direction is pointing forward).
+</p>
+
+<p>
+    <b>G04 – Dwell: </b>A dwell is simply a pause in the program. The duration of the dwell is specified by P in seconds. No machine movement will take place during a dwell. No auxiliary codes will be turned off, i.e. if the spindle is on it will stay on, coolant will stay on, etc.
+    Format: G04 P__ 
+    
+</p>
+
+<p>
+    <b>G09 – Exact Stop:</b> G09 is a non modal exact stop. Machine accelerations cause corners to be slightly rounded; when a true sharp corner is required G09 should be used. Although similar to G61 in function, G09 is not modal while G61 is. When G09 is included in a movement block, axis motion is decelerated to the end point of motion and the position is checked to be exactly as specified. This position check at the end of the move ensures that the machine actually reaches the desired position before moving onto the next block 
+    Format: G01 G09 X__ Y__ F__ 
+    
+</p>
+<p>
+    <b>G10 – Fixture and Tool Offset Setting:</b> It is possible to set fixture and tool offsets in the program. This can be very useful for programming multiple fixtures that have known zero points, multi pallet machines, applying automatic compensation of tool wear, and many other situations that require changing offset values. G10 is also one of the least understood G codes and is therefore underutilized. Changing offset values in a program requires a bit of cautiousness, a mistake can easily result in ruined parts and damaged tools. When used properly however, G10 can add flexibility and safety to a program and machine, especially with automation and lights out capacity or inexperienced operators. 
+    Starting with fixture offset setting the G10 block will look like the following: 
+    Format: G10 L2 P__ X__ Y__ Z__ A__ B__ C__ 
+    
+</p>
+
+<p>
+    <b>G12/G13 – Circle Interpolation:</b> These codes are used to cut a circle using the current position as the center point. Words, I and J, define the radius of the circle and the lead-in direction. G12 will cut a circle in the clockwise direction and G13 will cut in the counterclockwise direction. It is also possible to cut a larger circular pocket by specifying Q for the start radius and P for the step over amount. This can be useful for cutting a circular pocket or an ID groove. 
+Format 1: G12/13 I__ J__F__ 
+Format 2: G12/13 I__ J__ P__ Q__ 
+
+</p>
+
+<p>
+    <b>G17/G18/G19 – Plane Selection:</b> Arcs, circles and drill cycles require the selection of a plane. The three axes X, Y and Z define three available planes XY, ZX, and YZ. The third axis defines the top of the plane, this axis is also known as the normal. Selection of a plane is done by specifying one of three G codes: G17 for XY, G18 for ZX and G19 for YZ. These are modal G codes and will stay active until another plane is selected or the system is reset. The default plane selection is G17.
+</p>
+
+<p>
+    <b>G20/G21 – Unit selection:</b> Programming units are selected using G20 for inch and G21 for millimeter. Use these G codes to specify the units in the program only; the setting will not affect Mach DRO’s, configuration settings, or offsets. 
+</p>
+
+<p>
+    <b>G90.1/G91.1 – Absolute/Incremental Arc Center Mode:</b> This setting affects arcs when programmed in the I, J, K format. In absolute arc center mode the I, J, K values designate the position of the arc center in the user coordinate system. In incremental arc center mode the I, J, K values designate the distance and direction to the arc center from the start point. 
+
+</p>
+
+<br>
 
 <h5>G Code for our 3d model</h5>
 <img src="img/3dPrint/gcode 1.png" alt="">
 <img src="img/3dPrint/gcode 2.png" alt="">
 <img src="img/3dPrint/gcode 3.png" alt="">
+
+<br>
+<br>
 
 </div>
 </div>
