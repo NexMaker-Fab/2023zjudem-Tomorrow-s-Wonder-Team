@@ -63,7 +63,8 @@
                     </p>
 
                    </p>
-                   <img src="img/Final/water-transportation.png" alt="">
+                   <!-- <img src="img/Final/water-transportation.png" alt=""> -->
+                   <img src="img/Final/barrel use--.png" alt="">
                    <p>
       
                     LCDs often grapple with the arduous task of transporting water from distant sources to their communities. Furthermore, the water obtained is frequently contaminated, leading to widespread health issues. Recognizing this predicament, our team sought to develop an innovative solution that not only simplifies water transportation but also ensures that the water is safe for consumption.
@@ -74,7 +75,7 @@
                    <br>
 
                    <p>
-                    <h4>
+                    <h4 class="animate-charcter-2">
                       User Research
                     </h4>
                   </p> 
@@ -91,7 +92,7 @@
                     </a>
                     
                     <p>
-                      <h4>climate change:</h4> 
+                      <h5>climate change:</h5> 
                     The October-December 2022 season marked the fifth consecutive failed rainfall season, with both short and long rains falling below average since 2020. This resulted in the worst drought in 40 years (WMO, 2022, FAO 2022). The drought caused significant issues like harvest failures, poor pasture conditions, livestock losses, reduced surface water, and human conflicts, affecting 4.35 million people who require humanitarian aid (NDMA, 2022). Over 180,000 refugees from Somalia and South Sudan sought refuge in the drought-affected regions of Kenya and Ethiopia (UNHCR).
                   
                     </p>
@@ -270,7 +271,7 @@
                   <br>
 
                   <p>
-                    <h4>Key Tech Analysis</h4>
+                    <h4 class="animate-charcter-2">Key Tech Analysis</h4>
                     </p>
                     
                     <p>
@@ -771,7 +772,7 @@
 <br>
 
                   <p>
-                     <h4>User scenario</h4>
+                     <h4 class="animate-charcter-2">User scenario</h4>
                   </p>
                   <p>
                     <b>First Scenario - Water Transport Ease:</b> <br>
@@ -914,16 +915,245 @@ Several models available, with varying operating ranges and output types. Choose
 <br>
 
 <p>
-  <h4>Final Design</h4>
+  <h4 class="animate-charcter-2">Final Design</h4>
+</p>
+
+<h5>Model Process and Prototyping</h5>
+<br>
+<img src="img/Final/barrel 1.jpg" alt="">
+
+<h5>Fusion 360 Model</h5>
+<img src="img/Final/render.png" alt="">
+
+<p>
+  The entire model was completed in Fusion360. We modeled it to realize some design considerations such as the detachable handles for it to stand vertically to either change the filter and/or fill it with water and extract water from the other end of the container where the clean water is.
+</p>
+<img src="img/Final/model fusion.png" alt="">
+<p>
+  <div style="display: flex;">
+    <img src="img/Final/final-design-1.jpg" alt="" style="width: 300px;">
+    <img src="img/Final/final-design-2.jpg" alt="" style="width: 300px;">
+    <img src="img/Final/final-design-3.jpg" alt="" style="width: 300px;">
+     </div>
+</p>
+
+<img src="img/Final/model graphic.png" alt="">
+
+
+
+<br>
+<h5>Prototyping and Assembly</h5>
+<p>
+  Parts were both 3D Printed and LaserCut. Below is the full assembly of parts for the Roller Prototype. The model has been scaled down for prototyping and demonstration purposes. Through 3d printing, we used ABS filament.
+</p>
+<img src="img/Final/model parts.jpg" alt="">
+
+<br>
+<h5>Assembly Demo</h5>
+<p>An illustration and video demonstrating how we assembled the prototype.</p>
+<img src="img/Final/assembly demo 1.jpg" alt="">
+<img src="img/Final/assembly demo 2.jpg" alt="">
+
+<p>
+<video width="720" height="540" controls muted>
+  <source src="video/Assembling barrel.mp4" type="video/mp4">
+  <source src="video/Assembling barrel.mp4" type="video/ogg">
+Your browser does not support the video tag.
+</video>
+</p>
+
+
+<br>
+<p>In this video, we demonstrate the water passing through the filter. 
+
+<video width="720" height="540" controls muted>
+  <source src="video/water in barrel.mp4" type="video/mp4">
+  <source src="video/water in barrel.mp4" type="video/ogg">
+Your browser does not support the video tag.
+</video>
 </p>
 
 <p>
-  <div style="display: flex;">
-    <img src="img/Final/final-design-1.jpg" alt="" style="width: 350px;">
-    <img src="img/Final/final-design-2.jpg" alt="" style="width: 350px;">
-    <img src="img/Final/final-design-3.jpg" alt="" style="width: 350px;">
+  Barrel Handle are removable to position vertically in order to access and change the filter, add and take water from the filter.
+</p>
+<img src="img/Final/barrel.png" alt="">
+
+<br>
+<p>
+
+<h5>Materials Used</h5>
+<li>
+3D printer for Prototype
+
+</li>
+<li>
+ABS Filament for 3D Printing
+
+</li>
+<li>
+Acrylic sheets in Laser Cutting
+
+</li>
+<li>
+Adhesive Rubber strip for Roll-Aqua Tire
+
+</li>
+
+<li>
+Arduino Uno Board
+
+</li>
+<li>
+LCD Screen
+
+</li>
+<li>
+Turbidity Sensor  
+
+</li>
+</p>
+
+<h5>Other Material Considerations</h5>
+
+
+<br>
+
+<h5>Water Purification check with Arduino</h5>
+
+
+<b>Turbidity Monitoring:</b>
+<p>
+ The turbidity sensor is placed in the water to be filtered.
+It continuously measures turbidity levels in the water. 
+</p>
+
+
+<b>Arduino Processing:</b>
+
+<p>
+The Arduino reads turbidity sensor data.
+<br>
+
+It categorizes water quality into:
+
+<li>
+  Dirty (Low, 60%-100%), Medium, and High turbidity.
+</li>
+<li>
+  Cloudy (medium, 30%-59%)
+</li>
+<li>
+  Clear (High quality, 0%-29%)
+</li>
+
+</p>
+<img src="img/Final/water quality.jpg" alt="">
+
+<p>based on predefined thresholds</p>
+<br>
+<p><b>Arduino code:</b></p>
+
+<pre>
+  <code>
+    #include &lt;Wire.h&gt;
+      #include &lt;LiquidCrystal_I2C.h&gt;
+      
+      LiquidCrystal_I2C lcd(0x27, 16, 2);
+      int sensorPin = A0;
+      
+      void setup() {
+        Serial.begin(9600);
+      
+        lcd.begin(16, 2);  // Initialize the LCD with 16 columns and 2 rows
+      
+        pinMode(2, OUTPUT);
+        pinMode(3, OUTPUT);
+        pinMode(4, OUTPUT);
+      }
+      
+      void loop() {
+        int sensorValue = analogRead(sensorPin);
+        Serial.println(sensorValue);
+      
+        int turbidity = map(sensorValue, 0, 750, 100, 0);
+        delay(100);
+      
+        lcd.setCursor(0, 0);
+        lcd.print("turbidity:");
+        lcd.print("   ");
+        lcd.setCursor(10, 0);
+        lcd.print(turbidity);
+        delay(100);
+      
+        if (turbidity < 20) {
+          digitalWrite(2, HIGH);
+          digitalWrite(3, LOW);
+          digitalWrite(4, LOW);
+          lcd.setCursor(0, 1);
+          lcd.print(" its CLEAR ");
+        }
+
+        if ((turbidity > 20) && (turbidity < 50)) {
+          digitalWrite(2, LOW);
+          digitalWrite(3, HIGH);
+          digitalWrite(4, LOW);
+          lcd.setCursor(0, 1);
+          lcd.print(" its CLOUDY ");
+        }
+
+        if (turbidity > 50) {
+          digitalWrite(2, LOW);
+          digitalWrite(3, LOW);
+          digitalWrite(4, HIGH);
+          lcd.setCursor(0, 1);
+          lcd.print(" its DIRTY ");
+        }
+      }
+      
+  </code>
+</pre>
+
+<p>
+  <div style="display: flex; gap: 10px;">
+    <img src="img/Final/ard1.jpg" alt="" style="width: 300px;">
+    <img src="img/Final/ard2.jpg" alt="" style="width: 500px;">
      </div>
 </p>
+
+<p>
+  <video width="720" height="540" controls muted>
+    <source src="video/arduino use final.mp4" type="video/mp4">
+    <source src="video/arduino use final.mp4" type="video/ogg">
+  Your browser does not support the video tag.
+  </video>
+  </p>
+
+<br>
+<p>
+<h5>For future consideration:</h5>
+
+<li>
+
+  Gaskets to seal the end s of barrels
+</li>
+<li>
+
+  Locking mechanism for the top cover in order for it to to take the forces of rolling on the ground.
+</li>
+<li>
+
+  Testing with different filters for the turbidity test
+</li>
+<li>
+
+  Integrate the turbidity into the barrel design with compromising the design, structure
+</li>
+
+</p>
+
+
+
+
 
 <br>
 <br>
@@ -948,6 +1178,8 @@ Several models available, with varying operating ranges and output types. Choose
   Reference:
   <br><a class="blue-link" href="https://sdgs.un.org/goals/goal6#overview">Sustainable Development</a>
 </p>
+
+
 
 
 <div>
