@@ -1170,6 +1170,125 @@ Arduino code:
   </p>
 
 
+
+
+
+
+  <br>
+
+  <h5>Water Purification check with Arduino (Our final project)</h5>
+
+
+<b>Turbidity Monitoring:</b>
+<p>
+ The turbidity sensor is placed in the water to be filtered.
+It continuously measures turbidity levels in the water. 
+</p>
+
+
+<b>Arduino Processing:</b>
+
+<p>
+The Arduino reads turbidity sensor data.
+<br>
+
+It categorizes water quality into:
+
+<li>
+  Dirty (Low, 60%-100%), Medium, and High turbidity.
+</li>
+<li>
+  Cloudy (medium, 30%-59%)
+</li>
+<li>
+  Clear (High quality, 0%-29%)
+</li>
+
+</p>
+<img src="img/Final/water quality.jpg" alt="">
+
+<p>based on predefined thresholds</p>
+<br>
+<p><b>Arduino code:</b></p>
+
+<pre>
+  <code>
+    #include &lt;Wire.h&gt;
+      #include &lt;LiquidCrystal_I2C.h&gt;
+      
+      LiquidCrystal_I2C lcd(0x27, 16, 2);
+      int sensorPin = A0;
+      
+      void setup() {
+        Serial.begin(9600);
+      
+        lcd.begin(16, 2);  // Initialize the LCD with 16 columns and 2 rows
+      
+        pinMode(2, OUTPUT);
+        pinMode(3, OUTPUT);
+        pinMode(4, OUTPUT);
+      }
+      
+      void loop() {
+        int sensorValue = analogRead(sensorPin);
+        Serial.println(sensorValue);
+      
+        int turbidity = map(sensorValue, 0, 750, 100, 0);
+        delay(100);
+      
+        lcd.setCursor(0, 0);
+        lcd.print("turbidity:");
+        lcd.print("   ");
+        lcd.setCursor(10, 0);
+        lcd.print(turbidity);
+        delay(100);
+      
+        if (turbidity < 20) {
+          digitalWrite(2, HIGH);
+          digitalWrite(3, LOW);
+          digitalWrite(4, LOW);
+          lcd.setCursor(0, 1);
+          lcd.print(" its CLEAR ");
+        }
+
+        if ((turbidity > 20) && (turbidity < 50)) {
+          digitalWrite(2, LOW);
+          digitalWrite(3, HIGH);
+          digitalWrite(4, LOW);
+          lcd.setCursor(0, 1);
+          lcd.print(" its CLOUDY ");
+        }
+
+        if (turbidity > 50) {
+          digitalWrite(2, LOW);
+          digitalWrite(3, LOW);
+          digitalWrite(4, HIGH);
+          lcd.setCursor(0, 1);
+          lcd.print(" its DIRTY ");
+        }
+      }
+      
+  </code>
+</pre>
+
+<p>
+  <div style="display: flex; gap: 10px;">
+    <img src="img/Final/ard1.jpg" alt="" style="width: 300px;">
+    <img src="img/Final/ard2.jpg" alt="" style="width: 500px;">
+     </div>
+</p>
+
+<p>
+  <video width="720" height="540" controls muted>
+    <source src="video/arduino use final.mp4" type="video/mp4">
+    <source src="video/arduino use final.mp4" type="video/ogg">
+  Your browser does not support the video tag.
+  </video>
+  </p>
+
+<br>
+
+
 </div>
 </div>
     
